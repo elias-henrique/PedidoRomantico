@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Oi</title>
-    <style>
-        #container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
 
-        #button1, #button2 {
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 16px;
-        }
-    </style>
+<head>
+    <title>Oi ❤️</title>
 </head>
+
 <body style="background-color: black;">
-    
+
     <div id="container">
         <div>
             <h2 style="color:aliceblue">Me pague um lanche? ❤️ </h2>
         </div>
         <div>
-            <button id="button1">Sim</button>
-            <button id="button2">Não</button>
+            <button id="button" onclick="sim()">Sim</button>
+            <button id="button" onclick="desvia(this)" onmouseover="desvia(this)"
+                style="position: absolute;">Nao</button>
         </div>
     </div>
-
-    <script>
-        var button1 = document.getElementById("button1");
-
-        button1.addEventListener("click", function() {
-            window.location.href = "https://www.youtube.com/shorts/-ZbCQxNXKpE";
-        });
-
-        var button2 = document.getElementById("button2");
-
-        button2.addEventListener("click", function() {
-            var screenWidth = window.innerWidth;
-            var screenHeight = window.innerHeight;
-
-            var randomX = Math.floor(Math.random() * (screenWidth - 100));
-            var randomY = Math.floor(Math.random() * (screenHeight - 100));
-
-            button2.style.position = "absolute";
-            button2.style.left = randomX + "px";
-            button2.style.top = randomY + "px";
-        });
-    </script>
 </body>
+
+<style>
+    #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+    }
+</style>
+
+<script>
+    var button1 = document.getElementById("button1");
+
+    function sim() {
+        // redireciona para um URL após clicar no SIM
+        location.href = "https://www.youtube.com/shorts/-ZbCQxNXKpE";
+    }
+
+    function desvia(btn) {
+        // btn declarado na função
+        btn.style.position = 'absolute';
+        btn.style.bottom = geraPosicao(10, 90);
+        btn.style.left = geraPosicao(10, 90);
+        console.log('opa, desviei...');
+    }
+
+    function geraPosicao(min, max) {
+        return (Math.random() * (max - min) + min) + "%";
+    }
+</script>
+
 </html>
