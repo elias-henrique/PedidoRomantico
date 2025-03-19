@@ -1,0 +1,74 @@
+body {
+    background-color: #111;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Mantém os botões lado a lado */
+#botoes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Espaço entre os botões */
+    flex-wrap: wrap; /* Permite ajuste em telas menores */
+}
+
+/* Título responsivo */
+h2 {
+    color: #ff4d4d;
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(255, 77, 77, 0.8);
+}
+
+/* Estilização dos botões */
+button {
+    color: white;
+    background: linear-gradient(to right, #f87171, #ef4444, #dc2626);
+    border: none;
+    cursor: pointer;
+    font-size: clamp(1rem, 3vw, 2rem);
+    font-weight: bold;
+    border-radius: 0.75rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+    width: auto;
+    min-width: 150px; /* Mantém um tamanho mínimo */
+}
+
+button:hover {
+    background: linear-gradient(to bottom right, #f87171, #ef4444, #dc2626);
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(239, 68, 68, 0.5);
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 500px) {
+    #botoes {
+        flex-direction: row; /* Mantém lado a lado */
+        flex-wrap: wrap; /* Quebra se necessário */
+    }
+
+    button {
+        font-size: clamp(1.5rem, 6vw, 3rem);
+        padding: 1.5rem 3rem;
+        min-width: 120px; /* Mantém os botões proporcionais */
+    }
+}

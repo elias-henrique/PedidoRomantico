@@ -3,57 +3,22 @@
 
 <head>
     <title>Oi ❤️</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body style="background-color: black;">
+<body>
 
     <div id="container">
         <div>
-            <h2 style="color:aliceblue">Me pague um lanche? ❤️ </h2>
+            <h2>Me pague um lanche? ❤️ </h2>
         </div>
         <div>
-            <button id="button" onclick="sim()">Sim</button>
-            <button id="button" onclick="desvia(this)" onmouseover="desvia(this)"
-                style="position: absolute;">Nao</button>
+            <button id="button1" onclick="sim()">Sim</button>
+            <button id="button2" onclick="desvia(this)" onmouseover="desvia(this)">Nao</button>
         </div>
     </div>
+
+    <script src="scripts.js"></script>
 </body>
-
-<style>
-    #container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    #button {
-        padding: 10px 20px;
-        margin: 5px;
-        font-size: 16px;
-    }
-</style>
-
-<script>
-    var button1 = document.getElementById("button1");
-
-    function sim() {
-        // redireciona para um URL após clicar no SIM
-        location.href = "https://www.youtube.com/shorts/-ZbCQxNXKpE";
-    }
-
-    function desvia(btn) {
-        // btn declarado na função
-        btn.style.position = 'absolute';
-        btn.style.bottom = geraPosicao(10, 90);
-        btn.style.left = geraPosicao(10, 90);
-        console.log('opa, desviei...');
-    }
-
-    function geraPosicao(min, max) {
-        return (Math.random() * (max - min) + min) + "%";
-    }
-</script>
 
 </html>
